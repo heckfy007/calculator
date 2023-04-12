@@ -17,8 +17,8 @@ steps:
    versionSpec: '18.x'
   displayName: 'Install Node.js'
 - script: |
-    echo Starting install...
-    npm audit fix --force
+    echo Starting install...
+    npm audit fix --force
   displayName: 'npm install'
 - script: |
     echo Starting building...
