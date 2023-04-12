@@ -7,22 +7,15 @@ trigger:
 - master
 
 pool:
- name: az400m05l05a-pool
+  vmImage: ubuntu-latest
 
 steps:
-
 - task: NodeTool@0
-  inputs:
-    versionSpec: '18.x'
-  displayName: 'Install Node.js'
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
 - script: |
-    echo Starting install...
-    npm audit fix --force
-  displayName: 'npm install'
- 
-
-- script: |
-    echo Starting building...
-    npm run build
-  displayName: 'npm build'
+    npm install
+    npm run build
+  displayName: 'npm install and build'
